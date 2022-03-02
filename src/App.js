@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import { response } from "./assets/data/data";
+import List from "./pages/list";
 
 function App() {
+  const [data, setData] = useState();
+
+  const getData = () => {
+    const value = response.data.map(({ id, first_name, last_name, skills }) => {
+      return {
+        id: id,
+        full_name: first_name + " " + last_name,
+        expert_skills: Object.keys(skills)
+          .filter((key) => skills[key] == "expert")
+          .map((name) => name)
+      };
+    });
+    return value;
+  };
+  useEffect(() => {
+    setData(getData());
+    console.log(data);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <List />
     </div>
   );
 }
