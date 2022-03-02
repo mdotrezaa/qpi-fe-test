@@ -1,0 +1,10 @@
+@import url(./element/text.css);
+@import url(./layout/display.css);
+@import url(./components/card.css);
+
+:root{
+    --primary-color:cadetblue;
+    --secondary-color:rgb(223, 168, 86);
+    --white-color:#fff;
+    --black-color:#000;
+}

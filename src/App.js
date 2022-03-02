@@ -1,31 +1,17 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { response } from "./assets/data/data";
 import List from "./pages/list";
 
 function App() {
-  const [data, setData] = useState();
-
-  const getData = () => {
-    const value = response.data.map(({ id, first_name, last_name, skills }) => {
-      return {
-        id: id,
-        full_name: first_name + " " + last_name,
-        expert_skills: Object.keys(skills)
-          .filter((key) => skills[key] == "expert")
-          .map((name) => name)
-      };
-    });
-    return value;
-  };
-  useEffect(() => {
-    setData(getData());
-    console.log(data);
-  }, []);
-
   return (
     <div className='App'>
-      <List />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<List />} />
+          <Route exact path='/profile/:id' element={<List />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
