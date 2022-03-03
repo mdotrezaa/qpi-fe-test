@@ -25,7 +25,7 @@ function User(props) {
 
   return (
     <>
-      <div className="grid-3">
+      <div className="grid-2">
         <Card type="single">
           <Image />
           <Text headingLevel="h2" color="white" type="capitalize">
