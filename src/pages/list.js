@@ -1,33 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { response } from "../assets/data/data";
+import { Button } from "../components/elements/button";
 import { Text } from "../components/elements/text";
 import { Card } from "../components/modules/card";
+import { GlobalContext } from "../context/GlobalState";
 
 function List(props) {
-  const [data, setData] = useState([]);
-
-  const getData = () => {
-    const value = response.data.map(({ id, first_name, last_name, skills }) => {
-      return {
-        id: id,
-        full_name: first_name + " " + last_name,
-        expert_skills: Object.keys(skills)
-          .filter((key) => skills[key] == "expert")
-          .map((name) => name)
-      };
-    });
-    return value;
-  };
-  useEffect(() => {
-    setData((currentItems) => getData(currentItems));
-    console.log(data);
-  }, []);
+  const { users } = useContext(GlobalContext);
+  const history = useNavigate();
 
   return (
     <>
-      <div className='grid-1'>
-        <Card data={data} type='list' />
+      <div className="grid-1">
+        {users.map((item, index) => (
+          <Card onClick={()=> history("/profile/" + item.full_name.replace(/\s/g, "_").toLowerCase())} key={index} type="list">
+            <Text headingLevel="h2" color="white" type="capitalize">
+              {item.full_name}
+            </Text>
+            <Text headingLevel="h5" color="white">
+              Expert Skill:
+            </Text>
+            <Text headingLevel="p" color="white" type="capitalize">
+              {item.expert_skills.length > 0
+                ? item.expert_skills.map(
+                    (item, index) => (index ? ", " : "") + item,
+                  )
+                : "-"}
+            </Text>{" "}
+          </Card>
+        ))}
       </div>
+      <div className="center">
+
+      <Button onClick={() => history("/create")} type="create">
+        +
+      </Button>
+      </div>
+
     </>
   );
 }

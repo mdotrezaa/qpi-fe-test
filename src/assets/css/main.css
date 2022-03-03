@@ -1,10 +1,36 @@
 @import url(./element/text.css);
+@import url(./element/button.css);
+@import url(./element/input.css);
 @import url(./layout/display.css);
 @import url(./components/card.css);
 
-:root{
-    --primary-color:cadetblue;
-    --secondary-color:rgb(223, 168, 86);
-    --white-color:#fff;
-    --black-color:#000;
+:root {
+  --primary-color: cadetblue;
+  --secondary-color: rgb(223, 168, 86);
+  --icon-color: rgb(255, 211, 146);
+  --white-color: #fff;
+  --black-color: #000;
+}
+.profile {
+  position: relative;
+  width: 150px;
+}
+.icon {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--icon-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+}
+.list-center {
+  display: table;
+  margin: 0 auto;
+  padding: 0;
 }

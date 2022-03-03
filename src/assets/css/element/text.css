@@ -1,9 +1,16 @@
-.text-white{
-    color: var(--white-color);
+.text-white {
+  color: var(--white-color);
 }
-.text-black{
-    color: var(--black-color);
+.text-black {
+  color: var(--black-color);
 }
-.text-capitalize{
-    text-transform: capitalize;
+.text-danger {
+  color: red;
+  font-size: 14px;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+a {
+  text-decoration: none;
 }

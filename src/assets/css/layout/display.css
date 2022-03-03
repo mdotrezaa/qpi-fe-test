@@ -1,16 +1,37 @@
-.grid-1{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
-    row-gap: 15px;
-    padding: 10px;
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 15px;
+  padding: 10px;
 }
-.text-right{
-    text-align: right;
+.grid-2 {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
 }
-.text-center{
-    text-align: center;
+.grid-3 {
+  display: grid;
+  justify-content: center;
 }
-.text-left{
-    text-align: left;
+.flex-1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  margin: auto;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

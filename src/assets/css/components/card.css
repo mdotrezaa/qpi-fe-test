@@ -1,11 +1,14 @@
-.card-list{
-    /* background: rgb(223, 168, 86); */
-    background: var(--primary-color);
-    padding: 30px;
-    border-radius: 10px;
+.card-list {
+  /* background: rgb(223, 168, 86); */
+  background: var(--primary-color);
+  padding: 30px;
+  border-radius: 10px;
 }
-.card-single{
-    background: var(--secondary-color);
-    padding:30px;
-    border-radius: 10px;
+.card-single {
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 650px;
+  width: 100%;
+  height: 100vh;
 }
