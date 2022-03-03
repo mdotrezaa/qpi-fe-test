@@ -6,7 +6,7 @@ import { Text } from "../components/elements/text";
 import { Card } from "../components/modules/card";
 import { GlobalContext } from "../context/GlobalState";
 
-function List(props) {
+function ListUser(props) {
   const { users } = useContext(GlobalContext);
   const history = useNavigate();
 
@@ -42,4 +42,4 @@ function List(props) {
   );
 }
 
-export default List;
+export default ListUser;

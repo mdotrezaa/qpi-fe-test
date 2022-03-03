@@ -6,7 +6,7 @@ import { Text } from "../components/elements/text";
 import { Card } from "../components/modules/card";
 import { GlobalContext } from "../context/GlobalState";
 
-function Profile(props) {
+function User(props) {
   const { users } = useContext(GlobalContext);
   const [selectedUser, setSelectedUser] = useState({
     id: "",
@@ -25,7 +25,7 @@ function Profile(props) {
 
   return (
     <>
-      <div className="grid-2">
+      <div className="grid-3">
         <Card type="single">
           <Image />
           <Text headingLevel="h2" color="white" type="capitalize">
@@ -62,4 +62,4 @@ function Profile(props) {
   );
 }
 
-export default Profile;
+export default User;

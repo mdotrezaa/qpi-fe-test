@@ -4,8 +4,8 @@ import "./App.css";
 import { Button } from "./components/elements/button";
 import { GlobalProvider } from "./context/GlobalState";
 import AddUser from "./pages/addUser";
-import List from "./pages/list";
-import Profile from "./pages/profile";
+import ListUser from "./pages/listUser";
+import User from "./pages/user";
 
 function App() {
   
@@ -14,8 +14,8 @@ function App() {
       <GlobalProvider>
         <BrowserRouter>
           <Routes>
-            <Route exact path='/' element={<><List/></>} />
-            <Route exact path='/profile/:id' element={<Profile />} />
+            <Route exact path='/' element={<ListUser/>} />
+            <Route exact path='/profile/:id' element={<User />} />
             <Route exact path='/create' element={<><AddUser/></>} />
           </Routes>
         </BrowserRouter>
